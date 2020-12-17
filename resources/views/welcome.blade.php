@@ -25,7 +25,7 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
@@ -77,10 +77,12 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Após instalar as ferramentas, basta seguir os passos abaixo para rodar o projeto sem problemas
+                                    Após instalar as ferramentas, basta seguir os passos abaixo para rodar o projeto sem problemas.
+                                    Entrar pelo terminal na pasta do projeto e executar os comandos:
                                     <ul>
-                                        <li>Entrar pelo terminal na pasta do projeto e executar o comando <code>composer install</code></li>
-                                        <li>Executar o comando <code>npm run dev</code></li>
+                                        <li><code>composer install</code></li>
+                                        <li><code>npm install</code></li>
+                                        <li><code>npm run dev</code></li>
                                     </ul>
                                     Após rodar os comandos é necessário criar o banco de dados e configurar o arquivo .env na raiz do projeto. Em seguida executar os seguintes comandos:
                                     <ul>
