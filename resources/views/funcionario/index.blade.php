@@ -10,6 +10,7 @@
                     <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Empresa</th>
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Telefone</th>
@@ -21,6 +22,7 @@
                     @foreach($funcionarios as $funcionario)
                         <tr>
                             <td>{{ $funcionario->id }}</td>
+                            <td>{{ $funcionario->empresa->nome }}</td>
                             <td>{{ $funcionario->nome }}</td>
                             <td>{{ $funcionario->email }}</td>
                             <td>{{ $funcionario->telefone }}</td>

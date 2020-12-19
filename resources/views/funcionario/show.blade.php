@@ -16,6 +16,7 @@
 
                         <div>
                             <strong>ID:</strong> {{ $funcionario->id }} <br />
+                            <strong>Empresa:</strong> {{ $funcionario->empresa->nome }} <br />
                             <strong>Nome:</strong> {{ $funcionario->nome }} <br />
                             <strong>E-mail:</strong> {{ $funcionario->email }} <br />
                             <strong>Telefone:</strong> {{ $funcionario->telefone }} <br />

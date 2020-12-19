@@ -20,6 +20,6 @@ class Funcionario extends Model
 
     public function empresa()
     {
-        return $this->hasOne(Empresa::class);
+        return $this->BelongsTo(Empresa::class);
     }
 }

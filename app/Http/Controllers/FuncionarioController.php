@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Empresa;
 use App\Models\Funcionario;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,8 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        return view('funcionario.create');
+        $empresas = Empresa::pluck('nome', 'id');
+        return view('funcionario.create', compact('empresas'));
     }
 
     /**
@@ -39,15 +41,17 @@ class FuncionarioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'empresa' => 'required',
             'nome' => 'required',
             'email' => 'required',
         ]);
 
         $funcionario = new Funcionario();
+        $funcionario->empresa_id = $request->empresa;
         $funcionario->nome = $request->nome;
         $funcionario->email = $request->email;
         $funcionario->telefone = $request->telefone ?? null;
-        $funcionario->CPF = $request->cpf ?? null;
+        $funcionario->CPF = $request->CPF ?? null;
         $funcionario->save();
 
         return redirect()->route('funcionario.index')
@@ -73,7 +77,8 @@ class FuncionarioController extends Controller
      */
     public function edit(Funcionario $funcionario)
     {
-        return view('funcionario.edit', compact('funcionario'));
+        $empresas = Empresa::pluck('nome', 'id');
+        return view('funcionario.edit', compact('funcionario', 'empresas'));
     }
 
     /**
@@ -86,14 +91,16 @@ class FuncionarioController extends Controller
     public function update(Request $request, Funcionario $funcionario)
     {
         $request->validate([
+            'empresa' => 'required',
             'nome' => 'required',
             'email' => 'required',
         ]);
 
+        $funcionario->empresa_id = $request->empresa;
         $funcionario->nome = $request->nome;
         $funcionario->email = $request->email;
         $funcionario->telefone = $request->telefone ?? null;
-        $funcionario->CPF = $request->cpf ?? null;
+        $funcionario->CPF = $request->CPF ?? null;
         $funcionario->save();
 
         return redirect()->route('funcionario.index')

@@ -16,21 +16,29 @@
 
                         <form action="/funcionario" method="post">
                             @csrf
+                            <div class="form-group{{ $errors->has('empresa') ? ' has-error' : '' }}">
+                                <label for="empresa">Empresa</label>
+                                <select name="empresa" id="empresa" class="form-control" required autofocus>
+                                    @foreach($empresas as $key => $value)
+                                        <option value="{{ $key }}">{{ $value }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="">Nome</label>
-                                <input type="text" name="nome" class="form-control">
+                                <input type="text" name="nome" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">CPF</label>
+                                <input type="text" name="CPF" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">E-mail</label>
-                                <input type="email" name="email" class="form-control">
+                                <input type="email" name="email" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Telefone</label>
                                 <input type="text" name="telefnoe" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">CPF</label>
-                                <input type="text" name="CPF" class="form-control">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Salvar</button>

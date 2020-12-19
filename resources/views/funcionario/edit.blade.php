@@ -17,6 +17,19 @@
                         <form action="/funcionario/{{ $funcionario->id }}" method="post">
                             @csrf
                             @method('PUT')
+                            <div class="form-group{{ $errors->has('empresa') ? ' has-error' : '' }}">
+                                <label for="empresa">Empresa</label>
+                                <select name="empresa" id="empresa" class="form-control" required autofocus>
+                                    @foreach($empresas as $key => $value)
+                                        @if($key == $funcionario->empresa_id)
+                                            <option value="{{ $key }}" selected>{{ $value }}</option>
+                                        @else
+                                            <option value="{{ $key }}">{{ $value }}</option>
+                                        @endif
+
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="">Nome</label>
                                 <input type="text" name="nome" class="form-control" value="{{ $funcionario->nome }}">
