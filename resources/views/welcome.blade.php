@@ -125,15 +125,15 @@
                                     <ul>
                                         <li>
                                             Para consultar todas as empresas:
-                                            <code>http://direitodeouvir.local/api/empresas</code>
+                                            <code>direitodeouvir.local/api/empresas</code>
                                         </li>
                                         <li>
                                             Para consultar uma empresa específica:
-                                            <code>http://direitodeouvir.local/api/empresa/{id_empresa}</code>
+                                            <code>direitodeouvir.local/api/empresa/{id_empresa}</code>
                                         </li>
                                         <li>
                                             Para consultar funcrionários de uma empresa:
-                                            <code>http://direitodeouvir.local/api/empresa/{id_empresa}/funcionarios</code>
+                                            <code>direitodeouvir.local/api/empresa/{id_empresa}/funcionarios</code>
                                         </li>
                                     </ul>
                                 </div>

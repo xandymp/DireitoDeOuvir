@@ -15,10 +15,9 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
-        $funcionarios = Funcionario::latest()->paginate(10);
+        $funcionarios = Funcionario::latest()->simplePaginate(10);
 
-        return view('funcionario.index', compact('funcionarios'))
-            ->with('i', (request()->input('page', 1) - 1) * 10);
+        return view('funcionario.index', compact('funcionarios'));
     }
 
     /**

@@ -40,6 +40,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                {{ $funcionarios->links() }}
             </div>
         </div>
     </div>
