@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\EmpresaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('empresas', [EmpresaController::class, 'index']);
+Route::get('empresa/{empresa}', [EmpresaController::class, 'show']);
+Route::get('empresa/{empresa}/funcionarios', [EmpresaController::class, 'funcionarios']);
