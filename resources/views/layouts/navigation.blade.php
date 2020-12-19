@@ -21,6 +21,11 @@
                         {{ __('Empresa') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('funcionario.index')" :active="request()->routeIs('funcionario.index')">
+                        {{ __('Funcionário') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

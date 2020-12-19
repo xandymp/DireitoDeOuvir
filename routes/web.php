@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\FuncionarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +47,28 @@ Route::delete('/empresa/{empresa}', [EmpresaController::class, 'destroy'])
 Route::get('/empresa/{empresa}', [EmpresaController::class, 'show'])
     ->middleware(['auth'])
     ->name('empresa.show');
+
+Route::get('/funcionario', [FuncionarioController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('funcionario.index');
+Route::get('/funcionario/create', [FuncionarioController::class, 'create'])
+    ->middleware(['auth'])
+    ->name('funcionario.create');
+Route::post('/funcionario', [FuncionarioController::class, 'store'])
+    ->middleware(['auth'])
+    ->name('funcionario.store');
+Route::get('/funcionario/{funcionario}/edit', [FuncionarioController::class, 'edit'])
+    ->middleware(['auth'])
+    ->name('funcionario.edit');
+Route::put('/funcionario/{funcionario}', [FuncionarioController::class, 'update'])
+    ->middleware(['auth'])
+    ->name('funcionario.update');
+Route::delete('/funcionario/{funcionario}', [FuncionarioController::class, 'destroy'])
+    ->middleware(['auth'])
+    ->name('funcionario.destroy');
+Route::get('/funcionario/{funcionario}', [FuncionarioController::class, 'show'])
+    ->middleware(['auth'])
+    ->name('funcionario.show');
 
 require __DIR__.'/auth.php';
 
