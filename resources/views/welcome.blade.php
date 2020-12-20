@@ -57,6 +57,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                    Abaixo segue a lista de pré-requisitos do projeto:
                                     <ul>
                                         <li>COMPOSER</li>
                                         <li>PHP 7.4 ou acima</li>
@@ -132,7 +133,7 @@
                                             <code>direitodeouvir.local/api/empresa/{id_empresa}</code>
                                         </li>
                                         <li>
-                                            Para consultar funcrionários de uma empresa:
+                                            Para consultar funcionários de uma empresa:
                                             <code>direitodeouvir.local/api/empresa/{id_empresa}/funcionarios</code>
                                         </li>
                                     </ul>

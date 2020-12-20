@@ -46,6 +46,34 @@
                                 <label for="">CPF</label>
                                 <input type="text" name="CPF" class="form-control" value="{{ $funcionario->CPF }}">
                             </div>
+                            <div class="form-group">
+                                <label for="">CEP</label>
+                                <input type="text" name="cep" class="form-control cep-mask" value="{{ $funcionario->cep }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Endereço</label>
+                                <input type="text" name="endereco" class="form-control" id="endereco" value="{{ $funcionario->endereco }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Número</label>
+                                <input type="text" name="numero" class="form-control" id="numero" value="{{ $funcionario->numero }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Complemento</label>
+                                <input type="text" name="complemento" class="form-control" id="complemento" value="{{ $funcionario->complemento }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Bairro</label>
+                                <input type="text" name="bairro" class="form-control" id="bairro" value="{{ $funcionario->bairro }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Cidade</label>
+                                <input type="text" name="cidade" class="form-control" id="cidade" value="{{ $funcionario->cidade }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Estado</label>
+                                <input type="text" name="estado" class="form-control" id="estado" value="{{ $funcionario->estado }}">
+                            </div>
 
                             <button type="submit" class="btn btn-primary">Atualizar</button>
                         </form>

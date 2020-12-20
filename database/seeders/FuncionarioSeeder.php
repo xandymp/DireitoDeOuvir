@@ -14,10 +14,13 @@ class FuncionarioSeeder extends Seeder
      */
     public function run()
     {
-        Funcionario::factory()
-            ->times(40)
-            ->create([
-                'empresa_id' => rand(1, 20)
-            ]);
+        $i = 0;
+        while ($i <= 20):
+            Funcionario::factory()
+                ->create([
+                    'empresa_id' => rand(1, 20)
+                ]);
+            $i++;
+        endwhile;
     }
 }

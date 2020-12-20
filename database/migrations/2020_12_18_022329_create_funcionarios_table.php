@@ -19,9 +19,9 @@ class CreateFuncionariosTable extends Migration
                 ->unsigned();
             $table->string('nome', 255);
             $table->string('email', 255);
-            $table->string('telefone', 15)
+            $table->string('telefone', 25)
                 ->nullable();
-            $table->string('CPF', 11);
+            $table->string('CPF', 14);
             $table->timestamps();
             $table->softDeletes();
 

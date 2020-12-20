@@ -16,6 +16,12 @@ class Funcionario extends Model
         'email',
         'telefone',
         'CPF',
+        'cep',
+        'endereco',
+        'numero',
+        'bairro',
+        'cidade',
+        'estado',
     ];
 
     public function empresa()

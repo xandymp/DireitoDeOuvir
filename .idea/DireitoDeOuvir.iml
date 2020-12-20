@@ -115,6 +115,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/breeze" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/canducci/zipcode" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-extended/php-simple-cache-filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-extended/polyfill-php80-stringable" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

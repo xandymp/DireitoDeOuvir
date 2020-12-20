@@ -22,6 +22,16 @@
                             <strong>Telefone:</strong> {{ $funcionario->telefone }} <br />
                             <strong>CPF:</strong> {{ $funcionario->CPF }} <br />
                         </div>
+
+                        <div>
+                            <strong>CEP:</strong> {{ $funcionario->cep }} <br />
+                            <strong>Endereço:</strong> {{ $funcionario->endereco }} <br />
+                            <strong>Número:</strong> {{ $funcionario->numero }} <br />
+                            <strong>Complemento:</strong> {{ $funcionario->complemento }} <br />
+                            <strong>Bairro:</strong> {{ $funcionario->bairro }} <br />
+                            <strong>Cidade:</strong> {{ $funcionario->cidade }} <br />
+                            <strong>Estado:</strong> {{ $funcionario->estado }} <br />
+                        </div>
                     </div>
                 </div>
             </div>

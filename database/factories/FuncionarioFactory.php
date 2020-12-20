@@ -26,8 +26,13 @@ class FuncionarioFactory extends Factory
             'empresa_id' => 1,
             'nome' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'telefone' => Str::random(15),
-            'cpf' => Str::random(11),
+            'telefone' => $this->faker->phoneNumber,
+            'cpf' => $this->faker->numerify('###.###.###-##'),
+            'endereco' => $this->faker->address,
+            'numero' => $this->faker->numberBetween(123, 9999),
+            'bairro' => $this->faker->address,
+            'cidade' => $this->faker->city,
+            'estado' => 'SP',
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Empresa;
 use App\Models\Funcionario;
+use Canducci\ZipCode\Facades\ZipCode;
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
@@ -46,12 +47,7 @@ class FuncionarioController extends Controller
         ]);
 
         $funcionario = new Funcionario();
-        $funcionario->empresa_id = $request->empresa;
-        $funcionario->nome = $request->nome;
-        $funcionario->email = $request->email;
-        $funcionario->telefone = $request->telefone ?? null;
-        $funcionario->CPF = $request->CPF ?? null;
-        $funcionario->save();
+        $this->salvarFuncionario($funcionario, $request);
 
         return redirect()->route('funcionario.index')
             ->with('success', 'Funcionário criado.');
@@ -95,12 +91,7 @@ class FuncionarioController extends Controller
             'email' => 'required',
         ]);
 
-        $funcionario->empresa_id = $request->empresa;
-        $funcionario->nome = $request->nome;
-        $funcionario->email = $request->email;
-        $funcionario->telefone = $request->telefone ?? null;
-        $funcionario->CPF = $request->CPF ?? null;
-        $funcionario->save();
+        $this->salvarFuncionario($funcionario, $request);
 
         return redirect()->route('funcionario.index')
             ->with('success', 'Funcionario atualizado.');
@@ -118,5 +109,22 @@ class FuncionarioController extends Controller
 
         return redirect()->route('funcionario.index')
             ->with('success', 'Funcionário excluído');
+    }
+
+    private function salvarFuncionario(Funcionario $funcionario, Request $request)
+    {
+        $funcionario->empresa_id = $request->empresa;
+        $funcionario->nome = $request->nome;
+        $funcionario->email = $request->email;
+        $funcionario->telefone = $request->telefone ?? null;
+        $funcionario->CPF = $request->CPF ?? null;
+        $funcionario->cep = $request->cep ?? null;
+        $funcionario->endereco = $request->endereco ?? null;
+        $funcionario->numero = $request->numero ?? null;
+        $funcionario->complemento = $request->complemento ?? null;
+        $funcionario->bairro = $request->bairro ?? null;
+        $funcionario->cidade = $request->cidade ?? null;
+        $funcionario->estado = $request->estado ?? null;
+        $funcionario->save();
     }
 }

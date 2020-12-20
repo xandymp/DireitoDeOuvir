@@ -26,5 +26,8 @@
         "sass-loader": "^8.0.0",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "jquery-mask-plugin": "^1.14.16"
     }
 }
