@@ -3,6 +3,16 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+            @if(session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                </div>
+            @endif
             <div class="col-12">
                 <a href="funcionario/create" class="btn btn-primary mb-2">Novo funcionário</a>
                 <br>
