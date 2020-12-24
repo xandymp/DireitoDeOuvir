@@ -107,9 +107,14 @@ class EmpresaController extends Controller
      */
     public function destroy(Empresa $empresa)
     {
-        $empresa->delete();
+        if ($empresa->funcionarios()->count() <= 0) {
+            $empresa->delete();
+
+            return redirect()->route('empresa.index')
+                ->with('success', 'Empresa excluída');
+        }
 
         return redirect()->route('empresa.index')
-            ->with('success', 'Empresa excluída');
+            ->with('error', 'Não é possível excluir empresa com funcionários cadastrados.');
     }
 }

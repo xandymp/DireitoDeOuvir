@@ -17,4 +17,9 @@ class Empresa extends Model
         'logo',
         'website',
     ];
+
+    public function funcionarios()
+    {
+        return $this->HasMany(Funcionario::class);
+    }
 }
